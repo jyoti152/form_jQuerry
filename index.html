@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif}
+
+/* Full-width input fields */
+input[type=text], input[type=number], input[type=email],input[type=date],input[type=time] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background: rgb(203, 245, 204);
+  font-family: Bookman;
+  }
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  align-items :center;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  align-content: center;
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  margin-top: 30px;
+margin-left: 500px;
+margin-right: 500px;
+text-align: center;
+}
+
+img.avatar {
+  width: 200px;
+  border-radius: 100px;
+  height: 200px;
+
+}
+
+.container {
+  padding: 16px;
+  }
+.in{
+  padding: 10px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+span.star{
+  
+  color:#f44336;
+  white-space:nowrap;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+img{
+  border-radius: 50px;
+
+ 
+}
+
+
+input[type=file]{
+  padding:10px;
+  background-color: lightblue;
+  width: 200px; }
+
+/* Modal Content/Box */
+.modal-content {
+  font-family:Comic Sans MS;
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+.error-display{
+  display: none;
+  color: red;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+    align-content: center;
+     width: 100%;
+  }
+  .container img {vertical-align: middle;}
+
+.container .content {
+  position: absolute;
+  bottom: 0;
+  background: red; /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+}
+</style>
+</head>
+<body>
+
+<h2>ModelForm</h2>
+<div class="container">
+    <img src="avatar.jpg" alt="Notebook" style="width:25%;">
+    <div class="content">
+  
+   
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" >Login</button>
+</div>
+</div>
+<div id="id01" class="modal" >
+  
+  <div class="modal-content animate">
+    
+    <div class="imgcontainer">
+    
+      <p><input type="file"   accept="image/*" src="" name="image" id="file" style="display: none;"></p>
+      <p><label for="file" style="cursor: pointer;font-family:Courier;background:rgb(207, 216, 248)">Upload Your Image here</label></p>
+      <p><img  id="output" width="200" /></p>
+      <br>
+      
+    </div>
+
+    <div class="container">
+      <div>
+      <label for="uname"><b>Username<span class="star"> ** </span></label>
+      <input type="text"  id="uname" placeholder="Enter Username" name="uname"  required >
+      <span style="color:#f44336;font-family:Courier" id="error"></span>
+      </div>
+<div>     
+  <label for="email"><b>Email<span class="star"> ** </span></b></label>
+      <input type="email" id="mail" placeholder="Enter Email" name="email"   required >
+      <span style="color:#f44336;font-family:Courier" id="error-mail"></span>
+      
+    </div>
+      <div >
+      <label for="phn"><b>Phone no.<span class="star"> ** </span></b></label>
+      <input type="text" id="phone" placeholder="Enter phone number" name="phone" maxlength="10"  pattern="[0-9]{10}" required>
+      <span style="color:#f44336;font-family:Courier" id="error-phone"></span>
+    </div>
+      <br> 
+    
+    
+      <label for="remember"><b>Qualifications</b></label>
+      <br>
+        <input type="checkbox"  name="remember"> Graduated<br>
+        <input type="checkbox"  name="remember"> under graduation
+       <br>
+    <div><br>
+      <label for="lc"><b>Company Name<span class="star"> ** </span></b></label>
+      <input type="text" list="company"  id="cname" name="lc" placeholder="my company name" required >
+      <span style="color:#f44336;font-family:Courier" id="error-comp"></span>
+        <datalist id="company">
+        <option value="HCL">  
+        <option value="HP">
+        <option value="DELL">
+        <option value="LENEVO">
+        <option value="MAC">
+      </datalist>
+    </div>
+
+    <div>
+      <label for="time"><b>Time(optional)</b></label><br>
+      <input type="time" name="time" placeholder="Time(optional)"><br>
+    </div>
+
+    <div>
+    <label for="date"><b>Enter date(optional)</b></label><br>
+      <input type="date" name="date"><br>
+      <button type="submit"  id="submit">Login</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn" >Cancel</button>
+      </div>
+    </div>
+  </div>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="message.js"></script>
+</body>
+</html>
